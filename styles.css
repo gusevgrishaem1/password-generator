@@ -78,3 +78,16 @@ button:focus {
 a {
     color: #ccc;
 }
+
+#message {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 20px;
+    transition: opacity 0.5s ease-out;
+    opacity: 0;
+    visibility: hidden;
+}
+

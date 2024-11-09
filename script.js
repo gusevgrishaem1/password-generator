@@ -11,16 +11,38 @@ function generatePassword() {
     document.getElementById('password').value = password;
 }
 
+function showMessage(msg) {
+    const messageDiv = document.createElement('div');
+    messageDiv.id = 'message';
+    messageDiv.textContent = msg;
+
+    const container = document.querySelector('.container');
+    container.appendChild(messageDiv);
+
+    setTimeout(() => {
+        messageDiv.style.opacity = '1';
+        messageDiv.style.visibility = 'visible';
+    }, 10);
+
+    setTimeout(() => {
+        messageDiv.style.opacity = '0';
+        messageDiv.style.visibility = 'hidden';
+        setTimeout(() => {
+            container.removeChild(messageDiv);
+        }, 500);
+    }, 3000);
+}
+
 document.getElementById("password").addEventListener("click", function(){
     const passwordField = document.getElementById("password");
     passwordField.select();
     passwordField.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(passwordField.value)
         .then(() => {
-            alert('Password copied to clipboard!');
+            showMessage('Password copied to clipboard!')
         })
         .catch(err => {
             console.error('Failed to copy password: ', err);
-            alert('Failed to copy password.');
+            showMessage('Failed to copy password.');
         });
 })
