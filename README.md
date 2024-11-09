@@ -1,5 +1,8 @@
-# password-generator
+## password-generator
 Generate Password for your services
 
-# interface
+## interface
 ![Alt text](image.png)
+
+## license
+This project licensed by [MIT](LICENSE).
