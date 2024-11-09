@@ -11,7 +11,7 @@ function generatePassword() {
     document.getElementById('password').value = password;
 }
 
-function showMessage(msg) {
+function showMsg(msg) {
     const messageDiv = document.createElement('div');
     messageDiv.id = 'message';
     messageDiv.textContent = msg;
@@ -39,10 +39,10 @@ document.getElementById("password").addEventListener("click", function(){
     passwordField.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(passwordField.value)
         .then(() => {
-            showMessage('Password copied to clipboard!')
+            showMsg('Password copied to clipboard!')
         })
         .catch(err => {
             console.error('Failed to copy password: ', err);
-            showMessage('Failed to copy password.');
+            showMsg('Failed to copy password.');
         });
 })
